@@ -123,7 +123,7 @@ def get_chi2_stats(data,columns):
 
 ## Plot
 ```
-def get_corr_plot(data):
+def get_corr_plot(data,figsize=(25,25)):
     sns.set(style="whitegrid")
     corr = data.corr()
 
@@ -132,7 +132,7 @@ def get_corr_plot(data):
     mask[np.triu_indices_from(mask)] = True
 
     # Set up the matplotlib figure
-    f, ax = plt.subplots(figsize=(25, 25))
+    f, ax = plt.subplots(figsize=figsize)
 
     # Generate a custom diverging colormap
     cmap = sns.diverging_palette(220, 10, as_cmap=True)
@@ -140,6 +140,8 @@ def get_corr_plot(data):
     # Draw the heatmap with the mask and correct aspect ratio
     return sns.heatmap(corr, mask=mask, cmap=cmap, vmin=-1, vmax=1, center=0,
                 square=True, linewidths=.5, cbar_kws={"shrink": .5}, annot = True)
+
+get_corr_plot(X,(40,40)) # data,plot_size in tuple format
 
 ```
 
