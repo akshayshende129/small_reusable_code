@@ -212,7 +212,7 @@ def remove_highly_correalated_fature(data, thresh=0.8):
 def get_correlated_features(feature_name,data,thresh=0.7):
     corr = data.corr().abs() > thresh
     corr = corr.where(np.tri(corr.shape[0],corr.shape[1],k=-1).astype(bool))
-    return corr.where(corr.loc['homicides_per_100k',:].dropna() > thresh).dropna(how='all').index.tolist()
+    return corr.where(corr.loc[feature_name,:].dropna() > thresh).dropna(how='all').index.tolist()
     
 ```
     # Example
