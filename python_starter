@@ -1,0 +1,745 @@
+# single line comment
+"""Multi LineComment"""
+
+#Exponent Multiple/Power
+2**3
+
+##########Mapping variables while printing#############
+z = 'pyThoN'
+print(z.upper())
+print(z.lower())
+print(z.count('N'))
+print(z.replace('N','n'))
+print(z.find('T'))
+x = 8
+print('%s%s%s%s' %(x,x,x,z))
+
+###############DATE TIME#############
+import datetime
+print(datetime.datetime.now())
+print(datetime.datetime.today()) #Same as now()
+print(datetime.datetime.today(). strftime('%y'))
+print(datetime.datetime.today(). strftime('%Y'))
+print(datetime.datetime.today(). strftime('%m'))
+print(datetime.datetime.today(). strftime('%M'))
+print(datetime.datetime.today(). strftime('%d'))
+print(datetime.datetime.today(). strftime('%D'))
+print(datetime.datetime.today(). strftime('%T'))
+print(datetime.datetime.today(). strftime('%t'))
+print(datetime.datetime.today(). strftime('%b'))
+print(datetime.datetime.today(). strftime('%B'))
+print(datetime.datetime.today(). strftime('%w'))
+print(datetime.datetime.today(). strftime('%W'))
+print(datetime.datetime.today(). strftime('%a'))
+print(datetime.datetime.today(). strftime('%A'))
+
+
+########user input##########
+x  = input('enter your name\n')
+print('Welcome ' + x)
+
+
+##########gross compute############
+hr = input("enter hours\t")
+rate = input("enter rate/hr \t")
+#if(type(hr) is int and type(rate) is int):
+    gross= int(hr)*int(rate)
+    print(gross)
+#else:
+        #print("Not a number")
+
+##############try-except#############
+temp = input('Enter temperature: ')
+try:
+    temp = float(temp)
+    cal = (temp-32)/(5/9)
+    print(cal +" temperature in Celsius")
+except:
+    print("Input a number")
+
+try:
+    colNum = int(input("Enter number from 1 to 7: "))
+    if(colNum == 1):
+        print('RED')
+    elif(colNum == 2):
+        print('ORANGE')
+    elif(colNum == 3):
+        print('YELLOW')
+    elif(colNum == 4):
+        print('GREEN')
+    elif(colNum == 5):
+        print('BLUE')
+    elif(colNum == 6):
+        print('INDIGO')
+    elif(colNum == 7):
+        print('VIOLET')
+    else:
+        print('Enter number in the range of 1-7.')
+except:
+    print("Invalid Input")
+	
+
+try:
+    num = float(input("Enter a number: "))
+    if(num % 2 == 0):
+        print("Even Number")
+    else:
+        print('Odd Number')
+except:
+    print("Invalid Input")	
+
+
+#Write a program to check whether a passed letter is a vowel or not
+try:
+    letter = input("Enter a character: ")
+    letter = letter.lower()
+    if(letter == 'a' or letter == 'e' or letter == 'i' or letter == 'o' or  letter == 'u')):
+        print("Entered characeter is vowel")
+    else:
+        print('Not a vowel')
+except:
+    print('Invalid Input')
+
+
+#Write a program that accepts a positive single digit integer (n) and computes the value of n+nn+nnn e.g. if n=5, 5+55+555 = 651
+try:
+    num = input("enter number: ")
+    n = int(num)
+    if(n > 0 and len(num) == 1):
+        nn = int(num+num)
+        nnn = int(num+num+num)
+        sum = n+nn+nnn
+        #n + "+" + nn + "+" + nnn + "= " + 
+        print(sum)
+    else:
+        print("-ve number or digit  enter not a single digit")
+except:
+    print('Invalid Input')	
+
+#Write a Python program to get a string made of the first 2 and the last two chars from a given string. Other conditions as per the sample
+#Sample String : 'w3resource’	
+#Expected Result : 'w3ce’	
+#Sample String : 'w3’	
+#Expected Result : 'w3w3’	
+#Sample String : ' w’	
+#Expected Result : Empty String
+
+try:
+    sampleString = input('enter a string: ')
+    sLen = len(sampleString)
+    if(sLen == 1):
+        print("Empty String")
+    else:
+        print(sampleString[0]+sampleString[1]+sampleString[sLen-1]+sampleString[sLen])
+except:
+    print('Enter Valid Input')
+	
+	
+######Random Number########
+import random
+color = ['red','green','blue','yellow']
+print(random.choice(color))
+print(random.sample(range(1,80),10))
+
+########Math function#########
+import math
+math.ceil(2.5)
+
+#########function##########
+def xyz():
+    print('a')
+    print('b')
+    print('c')
+#assigning funvtion to a local var
+fun = xyz
+#calling
+fun() #fun(x,y) -> parameter passing
+
+#Add
+def add(x,y):
+    return(x+y)
+
+#Average
+def avg(x,y):
+    return((x+y)/2)
+
+#Sum Square
+def sqrSum(x,y):
+    return((x+y)*(x+y))
+
+#Max Number
+def maxNum(x,y,z):
+    if(x > y and x > z):
+        return x
+    elif(y > z):
+        return y
+    else:
+        return z
+
+#Range
+def rangeFun(x):
+    if(x  >= 50 and x <=100):
+        print('number in the range')
+    else:
+        print('out of range')
+
+############MATHS USER MENU############
+try:
+    menuString = 'Menu Option:\n1.Add two numbers.\n2.Find Average of two numbers.\n3.Squaring sum of two numbers.\n4.Find max of three numbers.\n4.Range in number of 50-100 or not.\nEnter Your Choice: '
+    choice = int(input(menuString))
+    if(choice in (1,2,3,4)):
+        num1 = float(input("Enter 1st number: "))
+        num2 = float(input("Enter 2nd number: "))
+    if(choice == 1):
+        callAdd = add
+        print(callAdd(num1,num2))
+    elif(choice == 2):
+        callAvg = avg
+        print(callAvg(num1,num2))
+    elif(choice == 3):
+        callSqrSum = sqrSum
+        print(callSqrSum(num1,num2))
+    elif(choice == 4):
+        num3 = float(input("Enter 3rd number: "))
+        callmaxNum = maxNum
+        print(callmaxNum(num1,num2,num3))
+    elif(choice == 5):
+        num = float(input("Enter number: "))
+        callrangeFun = rangeFun
+        callrangeFun(num)
+    else:
+         print("Enter number in the range of 1-5")
+except:
+    print("Error")
+
+########Loops##########
+n = 5
+while n > 0:
+    print(n)
+    n -= 1
+
+n = 5
+while 1:
+    if(n==0):
+        break
+    if(n == 3):
+        n -= 1
+        continue
+    print(n)
+    n -= 1	
+	
+try:
+    #num = [1,2,3,4,5,6,7,8,9,10]
+    num = [3,10,7,44,65]
+    add = even = odd = 0
+    for i in num:
+        if i%2 == 0:
+            even += i
+        else:
+            odd += i
+        add += i
+    print('even add', even)
+    print('odd add', odd)
+    print('total add', add)
+except:
+    print('Error')
+	
+#########LCM############
+num1 = 3
+num2 = 4
+i = 1
+lcm = 1
+high = max(num1,num2)
+while i <= high:
+    if (high%num1 == 0)  and (high%num2 == 0):
+        print('factor: ' ,i)
+    i += 1
+print(lcm)
+	
+######LCM bY GCD- TWO NUMBERS##########
+num1 = 3
+num2 = 4
+i = 1
+gcd = 1
+high = max(num1,num2)
+while i <= high:
+    if (num1 % i == 0)  and (num2 % i == 0):
+        gcd *= i
+        print('factor: ' ,i)
+    i += 1
+print((num1*num2)/gcd)
+
+########Star Pattern#########
+for i in range(0,5):
+    p=''
+    for j in range(0,i):
+        p += '*' + ' '
+    print(p)
+for i in range(5,0,-1):
+    p = ''
+    for j in range(i,0,-1):
+        p += '*' + ' '
+    print(p)	
+
+########Reverse Loops######
+for i in range(5,0,-1): #range(int_val,end_val,inc/dec val) int value = 0
+    print(i) #5 4 3 2 1
+print('\nReverse loop:\n')
+for i in range(5,1,-1): #range(int_val,end_val,inc/dec val) end value = 1 then 
+    print(i) #5 4 3 2
+	
+#string_var_name[init_index:end_index] -> end_index if not specified is the o/p is upto end
+
+
+########CHECK AND COUNT####
+try:
+	string = ' '
+	cited = ['121','123','123','324','121','4345']
+	for i in range(0,len(cited)):
+		count = 0
+		for j in range(0,len(cited)):
+			if(cited[i] == cited[j]):
+				count += 1
+		string += cited[i] + ' ' + str(count) + '\n'
+	
+except:
+	print('error')	
+	
+######Search####
+try:
+    string = input('Enter String: ')
+    fl = string.find(':')
+    print(string[fl+1:])
+except:
+    print('Error')
+	
+#####Unique Letter Count#####
+try:
+    string = input('Enter String: ')
+    #brackStart = '{'
+    opString = ''
+    tempString = ''
+    for ch in string:
+        if ch not in tempString:
+            tempString += ch
+            c = string.count(ch)
+            opString += ch + ':' + str(c) + ','
+    print('{' + opString + '}')
+except:
+    print('Error')
+	
+	
+####String Reverse#####
+try:
+    string = input('Enter String: ')
+    revString = ''
+    for ch in range(len(string),0,-1):
+        revString += string[ch-1]
+        print(revString)
+except:
+	print('Error')
+		
+		
+#######Recursive Fibonacci#####
+def fibo(num):
+    if(num ==  0 or num == 1):
+        return num
+    else:
+        return(fibo(num-1)+fibo(num-2))
+try:
+    fibo(10)
+    for i in range(0,10):
+        print(fibo(i))
+except:
+    print('Error')
+	
+#######Fibonacci(NORMAL)#####
+try:
+    num = int(input('Enter Number: '))
+    num1 = 0
+    num2 = 1
+    num3 = 0
+    print(num1)
+    print(num2)
+    if(num > 1):
+        for i in range(0,num):
+            num3 = num1 + num2
+            num1 = num2
+            num2 = num3
+            print(num3)
+except:
+    print('Error')
+	
+########String Palindrome########
+def palindrome(string):
+    revString = ''
+    flag = 0
+    
+    #Reverse String
+    for ch in range(len(string),0,-1):
+        revString += string[ch-1]
+        
+    #Checking reverse string wth origianal
+    for i in range(0,len(revString)-1):
+        if(string[i] == revString[i]):
+            flag = 1
+        else:
+            break
+        
+    #Checking flag
+    if(flag == 1):
+        print('Palindrome')
+    else:
+        print('not a palindrome')
+
+try:
+   string = input('Enter String: ')
+   palindrome(string)
+except:
+    print('Error')
+	
+#######Number Palindrome###########
+try:
+    n = int(input("Enter number: "))
+    temp=n
+    rev=0
+    while(n!=0):
+        dig = n%10
+        rev = rev*10+dig
+        n = int(n/10)
+        print('Last Digit : ' + str(dig) + ' Rev Digit : ' + str(rev) + ' Left Digit : ' + str(n))
+    if(temp==rev):
+        print("palindrome")
+    else:
+        print("not palindrome")
+except:
+    print('Error')
+	
+##########File Handling##########
+try:
+	file = open('temp.csv','r+')
+	count = 0
+	for ch in file:
+		count += 1
+	print(count)
+	print(type(file))
+except:
+	print('error')
+finally:
+	file.close()
+	
+###########List#########
+try:
+	list_Var = [1,2,3,4,57,4.25,'q','q2','32']
+	add = 0.0
+	for i in list_Var:
+		if(type(i) == int or type(i) == float):
+			add += i
+	print(add)
+except:
+	print('Error')
+	
+try:
+	list1 = [1,2,3,4,5]
+	list2 = ['a','b','c']
+	print(list1+list2)
+except:
+	print('Error')
+
+try:
+	list_Var = [1,2,3,4,57,4.25,'q','q2','32']
+	print(list_Var)
+	for i in range(1,len(list_Var)):
+		x = list_Var[i]
+		if(type(x) == int or type(x) == float):
+			list_Var[i] = x * 2
+	print(list_Var)
+	
+except:
+	print('Error')		
+	
+try:
+	a = 'spam'
+	print(a)
+	list_Var = list(a)
+	print(list_Var)
+	
+except:
+	print('Error')	
+
+	try:
+	a = 'spam - emails - marked'
+	print(a)
+	list_Var = list(a)
+	print(list_Var)
+	x = a.split('-')
+	print(x)
+except:
+	print('Error')	
+	
+#Length more than 2 and starting and ending with same character
+try:
+	a = 'spam-emails-marked-by-machine learning-model-aba-cbc-xyx-a-b-c-d'
+	count = 0
+	print(a)
+	list_Var = list(a.split('-'))
+	print(list_Var)
+	for i in list_Var:
+		if(len(i) >= 2 and (i[0] == i[len(i)-1])):
+			print(i)
+			count += 1
+except:
+	print('Error')	
+	
+try:
+	a = 'a-b-c-d-e-a-b-c-d'
+	unq_letters = ''
+	list_Var = list(a.split('-'))
+	print(list_Var)
+	for i in list_Var:
+		if i not in unq_letters:
+			unq_letters += i
+	unq_letters = list(unq_letters)
+	
+	
+except:
+	print('Error')	
+
+###############Dictionary#################
+#creating dictionary
+my_dict = {'a':'Ada',
+           'b':'BASIC',
+           1:'One',
+           'A1':'A ONE'}
+print('Org : ' , my_dict)
+
+#Access a value
+print('Access Value : ' , my_dict['a'])
+
+
+#Add a key
+my_dict['c'] = 'Computer'
+print('Add Key :' , my_dict)
+
+
+#Update dictionary
+my_dict['A1'] = 'Update A1'
+print('Normal update : ' , my_dict)
+#update() method
+ud = {'x':'X-Men',
+      'y':'YAML',
+      2:'Two',
+      'B1':'B ONE'}
+my_dict.update(ud) 
+print('Update() : ' , my_dict)
+
+
+#Delete a key
+#using del keyword
+del my_dict['A1']
+print('del keyword : ' , my_dict)
+#using methos
+my_dict.pop('c')
+print('pop() : ' ,my_dict)
+
+
+print(my_dict.values())
+
+
+
+##########File Word Count###########
+filePath = './data/temp_python.txt'
+try:
+    file = open(filePath,'r+')
+    #print(file.read())
+    split_word = file.read().split()
+    unq_words = ''
+    count_words = ''
+    for i in split_word:
+        if i not in unq_words:
+            unq_words += i +'\n'
+            count = split_word.count(i)
+            count_words += i + ' : ' + str(count) + '\n'
+    print(count_words)
+    file.close()
+except:
+    print('Error')
+	
+
+	
+	
+########## File Word Count (Using Dictionary)###########
+filePath = './data/temp_python.txt'
+try:
+    file = open(filePath,'r+')
+    split_word = file.read().split()
+    unq_words = {}
+    for i in split_word:
+        if i not in unq_words.keys():
+            unq_words[i] = split_word.count(i)
+    print(unq_words)
+    file.close()
+except:
+    print('Error')
+
+
+###### MAKETRANS() ###########
+
+# first string
+firstString = "cab"
+secondString = "yzx"
+thirdString = "ab"
+
+string = "abcdef"
+print("Original string:", string)
+
+translation = string.maketrans(firstString, secondString, thirdString)
+
+# translate string
+print("Translated string:", string.translate(translation))	
+	
+	
+########## File Word Count (Using Dictionary) using makeTrans() ###########
+import string
+
+filePath = './data/temp_python.txt'
+try:
+    file = open(filePath,'r+')
+    all_lower = file.read().lower()
+    pun_removed = all_lower.maketrans(",",".",string.punctuation)
+    split_word = all_lower.translate(pun_removed).split()
+    unq_words = {}
+    for i in split_word:
+        if i not in unq_words.keys():
+            unq_words[i] = split_word.count(i)
+    print(unq_words)
+    file.close()
+except:
+    print('Error')
+
+	
+#######SORT DICT########
+import operator
+d = {
+    'c':'3',
+    'a':'1',
+    'b':'2'
+}
+print("Items: ", d.items())
+print("OPERATOR ITEMGETTER: ")
+print("Org Dict: ", d)
+asc_d = sorted(d.items(), key = operator.itemgetter(0))
+print('ASC DICT : ',asc_d)
+desc_d = sorted(d.items(), key = operator.itemgetter(0),reverse=True)
+print('DESC DICT : ',desc_d)  
+
+
+######### COMBINING DICTIONARY ON SAME KEY VALUES ##########
+def combine_dict(dict1,dict2):
+    s1 = set(dict1)
+    s2 = s1.intersection(set(dict2))
+    dict_temp = {}
+    for i in s2:
+        dict_temp[i] = dict1[i] + dict2[i] 
+    return(dict_temp)
+    
+dict_temp1 = {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+dict_temp2 = {10: 0, 11: 1, 12: 4, 3: 9, 4: 10, 5: 20, 6: 36}
+print(combine_dict(dict_temp1,dict_temp2))
+
+
+######## SAME VALUES ##########
+my_list = [{"V":"S001"}, {"V": "S002"}, {"VI": "S001"}, {"VI": "S005"}, {"VII":"S005"}, {"V":"S009"},{"VIII":"S007"}]
+val = []
+for i in  my_list:
+    for j in i.values():
+        val.append(j)
+print(set(val))
+
+
+
+################## TUPLES ########################
+###Tuples decared as ending with comma or another element seperated by comma(,)
+####Immutable
+t = 3,4
+print(type(t))
+
+t1 = 3,'a'
+print(t1)
+
+t2 = 5,6
+
+t3 = t + t1
+print(t3)
+
+#t4 = t * t2 #can't multiply sequence by non-int of type 'tuple'
+
+str = 'akshay shende'
+t5 = tuple(str)
+print(t5)
+ 
+t6 = tuple(str.split())
+print(t6)
+
+############ REGULAR EXPRESSION ############
+import re
+try:
+	rf = open('./regex_file.txt','r+')
+	for l in rf:
+		if re.search('^aegis',l): #Starting with aegis
+			print('aegis at start :' ,l)
+		if re.search('aegis+?',l): #Anywhere
+			print('aegis anywhere: ',l)
+		if re.search('\S+@\S+',l): #Email
+			print('email: ',l)
+		if re.search('[a-zA-Z0-9]+\S@\S+[a-zA-Z0-9]',l):
+			print('no special : ' ,l)
+			
+	#for l in rf:		
+	#	x = re.findall('\S+@\S+',l)
+	#	if len(x) >0:
+	#		print(x)
+	rf.close()
+except:
+	print('Error')
+	
+import re
+try:
+	string = 'hellp from <csev@umich.edu> to <cwen@iupui.edu> about thw meeting @2PM'
+	x = re.findall('\S+@\S+',string)
+	print(x)
+except:
+	print('Error')
+	
+
+import re
+try:
+	fhand = open('./regex_file.txt','r+')
+	for l in fhand:
+		x = re.findall('^X-\S+-\S+:\s0.0000',l)
+		if(len(x) > 0):
+			print(x)
+	fhand.close()
+except:
+	print('Error')
+	
+#find sequences of lowercase letters joined with a underscore
+import re
+try:
+	fhand = open('./regex_file.txt','r+')
+	for l in fhand:
+		x = re.findall('[a-z]+_',l)
+		if(len(x) > 0):
+			print(x)
+	fhand.close()
+except:
+	print('Error')
+
+#search the numbers (0-9)  in a given string
+import re
+try:
+	string = 'Session number 4, 18, 22, and 115 are important'
+	x = re.findall('[0-9]+',string)
+	print(x)
+except:
+	print('Error')
