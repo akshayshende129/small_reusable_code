@@ -1,10 +1,10 @@
 # single line comment
 """Multi LineComment"""
 
-#Exponent Multiple/Power
+############## Exponent Multiple/Power ###############
 2**3
 
-##########Mapping variables while printing#############
+########## Mapping variables while printing #############
 z = 'pyThoN'
 print(z.upper())
 print(z.lower())
@@ -14,7 +14,7 @@ print(z.find('T'))
 x = 8
 print('%s%s%s%s' %(x,x,x,z))
 
-###############DATE TIME#############
+############### DATE TIME #############
 import datetime
 print(datetime.datetime.now())
 print(datetime.datetime.today()) #Same as now()
@@ -34,21 +34,21 @@ print(datetime.datetime.today(). strftime('%a'))
 print(datetime.datetime.today(). strftime('%A'))
 
 
-########user input##########
+################# User Input ################
 x  = input('enter your name\n')
 print('Welcome ' + x)
 
 
-##########gross compute############
+### Gross compute 
 hr = input("enter hours\t")
 rate = input("enter rate/hr \t")
 #if(type(hr) is int and type(rate) is int):
-    gross= int(hr)*int(rate)
-    print(gross)
+gross= int(hr)*int(rate)
+print(gross)
 #else:
         #print("Not a number")
 
-##############try-except#############
+############## Exception Handling #############
 temp = input('Enter temperature: ')
 try:
     temp = float(temp)
@@ -89,11 +89,11 @@ except:
     print("Invalid Input")	
 
 
-#Write a program to check whether a passed letter is a vowel or not
+# Write a program to check whether a passed letter is a vowel or not
 try:
     letter = input("Enter a character: ")
     letter = letter.lower()
-    if(letter == 'a' or letter == 'e' or letter == 'i' or letter == 'o' or  letter == 'u')):
+    if(letter == 'a' or letter == 'e' or letter == 'i' or letter == 'o' or  letter == 'u'):
         print("Entered characeter is vowel")
     else:
         print('Not a vowel')
@@ -101,7 +101,7 @@ except:
     print('Invalid Input')
 
 
-#Write a program that accepts a positive single digit integer (n) and computes the value of n+nn+nnn e.g. if n=5, 5+55+555 = 651
+# Write a program that accepts a positive single digit integer (n) and computes the value of n+nn+nnn e.g. if n=5, 5+55+555 = 651
 try:
     num = input("enter number: ")
     n = int(num)
@@ -116,13 +116,13 @@ try:
 except:
     print('Invalid Input')	
 
-#Write a Python program to get a string made of the first 2 and the last two chars from a given string. Other conditions as per the sample
-#Sample String : 'w3resource’	
-#Expected Result : 'w3ce’	
-#Sample String : 'w3’	
-#Expected Result : 'w3w3’	
-#Sample String : ' w’	
-#Expected Result : Empty String
+# Write a Python program to get a string made of the first 2 and the last two chars from a given string. Other conditions as per the sample
+# Sample String : 'w3resource’
+# Expected Result : 'w3ce’
+# Sample String : 'w3’
+# Expected Result : 'w3w3’
+# Sample String : ' w’
+# Expected Result : Empty String
 
 try:
     sampleString = input('enter a string: ')
@@ -135,17 +135,17 @@ except:
     print('Enter Valid Input')
 	
 	
-######Random Number########
+########### Random Number ############
 import random
 color = ['red','green','blue','yellow']
 print(random.choice(color))
 print(random.sample(range(1,80),10))
 
-########Math function#########
+############## Math function ############
 import math
 math.ceil(2.5)
 
-#########function##########
+################ User Defiend Function ################
 def xyz():
     print('a')
     print('b')
@@ -183,7 +183,7 @@ def rangeFun(x):
     else:
         print('out of range')
 
-############MATHS USER MENU############
+############ ######MATHS USER MENU #####################
 try:
     menuString = 'Menu Option:\n1.Add two numbers.\n2.Find Average of two numbers.\n3.Squaring sum of two numbers.\n4.Find max of three numbers.\n4.Range in number of 50-100 or not.\nEnter Your Choice: '
     choice = int(input(menuString))
@@ -212,7 +212,7 @@ try:
 except:
     print("Error")
 
-########Loops##########
+################# Loops #################
 n = 5
 while n > 0:
     print(n)
@@ -244,7 +244,7 @@ try:
 except:
     print('Error')
 	
-#########LCM############
+############### LCM ###################
 num1 = 3
 num2 = 4
 i = 1
@@ -256,7 +256,7 @@ while i <= high:
     i += 1
 print(lcm)
 	
-######LCM bY GCD- TWO NUMBERS##########
+########### LCM bY GCD- TWO NUMBERS ###############
 num1 = 3
 num2 = 4
 i = 1
@@ -269,7 +269,7 @@ while i <= high:
     i += 1
 print((num1*num2)/gcd)
 
-########Star Pattern#########
+############### Star Pattern ################
 for i in range(0,5):
     p=''
     for j in range(0,i):
@@ -281,7 +281,7 @@ for i in range(5,0,-1):
         p += '*' + ' '
     print(p)	
 
-########Reverse Loops######
+############### Reverse Loops ##############
 for i in range(5,0,-1): #range(int_val,end_val,inc/dec val) int value = 0
     print(i) #5 4 3 2 1
 print('\nReverse loop:\n')
@@ -291,7 +291,7 @@ for i in range(5,1,-1): #range(int_val,end_val,inc/dec val) end value = 1 then
 #string_var_name[init_index:end_index] -> end_index if not specified is the o/p is upto end
 
 
-########CHECK AND COUNT####
+############## CHECK AND COUNT #############
 try:
 	string = ' '
 	cited = ['121','123','123','324','121','4345']
@@ -305,7 +305,7 @@ try:
 except:
 	print('error')	
 	
-######Search####
+###### Search #############
 try:
     string = input('Enter String: ')
     fl = string.find(':')
@@ -313,7 +313,7 @@ try:
 except:
     print('Error')
 	
-#####Unique Letter Count#####
+######### Unique Letter Count #############
 try:
     string = input('Enter String: ')
     #brackStart = '{'
@@ -329,7 +329,7 @@ except:
     print('Error')
 	
 	
-####String Reverse#####
+######### String Reverse ##########
 try:
     string = input('Enter String: ')
     revString = ''
@@ -340,7 +340,7 @@ except:
 	print('Error')
 		
 		
-#######Recursive Fibonacci#####
+############# Recursive Fibonacci #############
 def fibo(num):
     if(num ==  0 or num == 1):
         return num
@@ -353,7 +353,7 @@ try:
 except:
     print('Error')
 	
-#######Fibonacci(NORMAL)#####
+############## Fibonacci(NORMAL) #############
 try:
     num = int(input('Enter Number: '))
     num1 = 0
@@ -370,7 +370,7 @@ try:
 except:
     print('Error')
 	
-########String Palindrome########
+############ String Palindrome ############
 def palindrome(string):
     revString = ''
     flag = 0
@@ -398,7 +398,7 @@ try:
 except:
     print('Error')
 	
-#######Number Palindrome###########
+####### Number Palindrome ###########
 try:
     n = int(input("Enter number: "))
     temp=n
@@ -415,7 +415,7 @@ try:
 except:
     print('Error')
 	
-##########File Handling##########
+########## File Handling ##########
 try:
 	file = open('temp.csv','r+')
 	count = 0
@@ -428,7 +428,7 @@ except:
 finally:
 	file.close()
 	
-###########List#########
+########### List #########
 try:
 	list_Var = [1,2,3,4,57,4.25,'q','q2','32']
 	add = 0.0
@@ -463,19 +463,17 @@ try:
 	print(a)
 	list_Var = list(a)
 	print(list_Var)
-	
-except:
-	print('Error')	
-
-	try:
-	a = 'spam - emails - marked'
-	print(a)
-	list_Var = list(a)
-	print(list_Var)
-	x = a.split('-')
-	print(x)
-except:
-	print('Error')	
+except Exception as e:
+    print('Error: ',e)
+    try:
+        a = 'spam - emails - marked'
+        print(a)
+        list_Var = list(a)
+        print(list_Var)
+        x = a.split('-')
+        print(x)
+    except:
+        print('Error')	
 	
 #Length more than 2 and starting and ending with same character
 try:
@@ -505,7 +503,7 @@ try:
 except:
 	print('Error')	
 
-###############Dictionary#################
+############### Dictionary #################
 #creating dictionary
 my_dict = {'a':'Ada',
            'b':'BASIC',
@@ -547,7 +545,7 @@ print(my_dict.values())
 
 
 
-##########File Word Count###########
+########## File Word Count ###########
 filePath = './data/temp_python.txt'
 try:
     file = open(filePath,'r+')
@@ -568,7 +566,7 @@ except:
 
 	
 	
-########## File Word Count (Using Dictionary)###########
+########## File Word Count (Using Dictionary) ###########
 filePath = './data/temp_python.txt'
 try:
     file = open(filePath,'r+')
@@ -618,7 +616,7 @@ except:
     print('Error')
 
 	
-#######SORT DICT########
+####### SORT DICT ########
 import operator
 d = {
     'c':'3',
