@@ -9,6 +9,6 @@ This file will give you a basic start to python via example
 This file will give you a basic start to Machine Learning Model bulding using scikit learn library
 
 ## Resuse.md
-This file is written in Markdoen format so you can easily traverse to the code directly.
+This file is written in Markdown format so you can easily traverse to the code directly.
 
 
