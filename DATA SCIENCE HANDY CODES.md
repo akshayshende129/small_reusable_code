@@ -1,4 +1,4 @@
-# SMALL CODE
+# DATA SCIENCE HANDY CODES
 
 <!-- toc -->
 
